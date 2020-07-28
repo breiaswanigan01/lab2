@@ -37,10 +37,20 @@ while (randomNumber !== 5) {
 
 // EXTENDED CHALLENGE
 
-let hours = 25;
-let wage = 11;
-let pay = 275;
+let hours = 40;
+let wage = 10;
 
-if (hours > 40) {
-  console.log(pay * 1.5);
+if (hours <= 40) {
+  let paycheck = hours * wage;
+  let weeks = Math.ceil(1000000 / paycheck);
+  console.log(
+    `With wage=${wage} and hours=${hours} it would take ${weeks} weeks.`
+  );
+} else {
+  let overtime = (hours - 40) * (wage * 1.5);
+  let paycheck = 40 * wage + overtime;
+  let weeks = Math.ceil(1000000 / paycheck);
+  console.log(
+    `With wage=${wage} and hours=${hours} it would take ${weeks} weeks.`
+  );
 }
